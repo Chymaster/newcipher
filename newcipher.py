@@ -1,3 +1,19 @@
+#This is a developing breaking cipher program
+#It is the restructured edition from the 'classic cipher.py'
+#
+#
+#
+#
+#
+#
+#Functions:
+##indexes(list,element) returns every index number of that element
+##bilgram(code in digits<=26) returns the score on how english it is
+##code_to_num(code in string) returns code in digit
+##num_to_code(code in digit) returns code in string
+##shift(code in string) returns the answer for ceaser shift
+##
+
 global code_list #every letter in the code is an element in this
 code_list = [a for a in input('please put the code')]
 
