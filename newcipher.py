@@ -127,36 +127,6 @@ def check_frequency(code):
 
 def caesar():
     return shift(code_list)
-
-
-def trans6():    #REARRANGE IT
-    count = 1
-    code = []
-    dev = [[],[],[],[],[],[]]
-    for a in code_list:
-        if  count <= len(code_list)/6:
-            dev[0].append(a)
-            count += 1
-        elif  count <= len(code_list)/6*2:
-            dev[1].append(a)
-            count += 1
-        elif  count <= len(code_list)/6*3:
-            dev[2].append(a)
-            count += 1
-        elif  count <= len(code_list)/6*4:
-            dev[3].append(a)
-            count += 1
-        elif  count <= len(code_list)/6*5:
-            dev[4].append(a)
-            count += 1
-        else:
-            dev[5].append(a)
-            count += 1        
-    count = 0
-    while count <= len(code_list)/6 -1:
-        code.append([a[count] for a in dev])
-        count += 1
-    print(''.join(''.join(a) for a in code))
     
 def trans(key_):
     length = (len(code_list)/key_)
