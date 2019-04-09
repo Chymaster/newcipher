@@ -26,7 +26,10 @@
 
 global code_list #every letter in the code is an element in this
 code_list = [a for a in input('please put the code')]
-
+#
+#
+#The function gcd(a,b) returns the greatest common factor of two integer input
+#Using the famous Euclid's Algorithms.
 def gcd(a,b):
     c = 1
     if a > b:
@@ -38,7 +41,7 @@ def gcd(a,b):
         a = b
         b = c
     return a
-
+#indexes(list,element) returns a list that contains the index number of such element in the list
 def indexes(in_list,elements):
     indexs = []
     lists = in_list[:]
@@ -49,8 +52,14 @@ def indexes(in_list,elements):
         except ValueError:
             break
     return indexs
-
-def bigram(code_number):# input the digitalised code, return score
+# input the digitalised code, return score
+# Such score is determined by appearance of common bigrams in the text
+##bigram intakes a list code_number
+###code_number is a list that consist integers in range(1,26)
+###each element in code_number represent an English Letter, in alphabetic order, 
+###such as a == 1, b == 2 etc.
+###functions num_to_code() and code_to_num() converts code into code_number and vise versa
+def bigram(code_number):
     #example elif code_number[count] ==  and code_number[count + 1] == :
     score = 0
     count = 0
@@ -83,6 +92,7 @@ def code_to_num(code):
 def num_to_code(num):
     return [chr(a + 96) for a in num]
 
+#shift(code_list) returns the answer for ceaser shift
 def shift(code_cache):
     code = code_cache[:]
     count = 1
@@ -147,7 +157,7 @@ def trans(key_):
         code.append([a[index_] for a in dev])
         index_ += 1
     return (''.join(''.join(a) for a in code))
-
+##testbase() is a temporary function to test output
 def testbase():
     global asd
     asd = range(27)
